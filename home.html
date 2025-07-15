@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccSoft 2.0 : Parent Desk</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f5f9;
+    }
+    header {
+      background: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      position: relative;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo-box img {
+      height: 60px;
+    }
+    .header-info {
+      display: flex;
+      gap: 40px;
+      font-size: 14px;
+      margin-left: 40px;
+      flex: 1;
+      justify-content: center;
+    }
+    .info-block {
+      text-align: left;
+    }
+    .info-block strong {
+      display: block;
+      font-weight: 600;
+    }
+    .profile-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+    .profile-box img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+    .profile-box span {
+      font-weight: 500;
+      color: #666;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      font-size: 14px;
+      z-index: 1000;
+    }
+    .dropdown.active {
+      display: block;
+    }
+    .dropdown-header {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .dropdown-header strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .dropdown-header div {
+      color: #555;
+      margin-top: 2px;
+    }
+    .dropdown a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      border-top: 1px solid #f0f0f0;
+    }
+    .dropdown a:hover {
+      background: #f9f9f9;
+    }
+    .sidebar {
+      width: 220px;
+      background: #0e2a5c;
+      color: #fff;
+      position: fixed;
+      top: 71px;
+      bottom: 0;
+      left: 0;
+      padding-top: 30px;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: 500;
+      border-left: 4px solid transparent;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      background-color: #1e3f73;
+      border-left: 4px solid #ffc107;
+    }
+    .main-content {
+      margin-left: 220px;
+      padding: 30px;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      flex: 1;
+      min-width: 300px;
+    }
+    .card h2 {
+      font-size: 18px;
+      border-bottom: 2px solid #dcdcdc;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .card ul {
+      list-style: none;
+    }
+    .card li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .card li img {
+      height: 28px;
+      width: 28px;
+      margin-right: 10px;
+    }
+    .card li a {
+      color: #0056b3;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .card li a.red {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-box">
+      <img src="NIU_Logo.png" alt="NIU Logo">
+      <span>Noida International University</span>
+    </div>
+    <div class="header-info">
+      <div class="info-block">
+        <strong>Scholar No.</strong>
+        12976
+      </div>
+      <div class="info-block">
+        <strong>Class</strong>
+        B.Tech (Computer Science & Engineering - Data Science) II SEM , SEC- A
+      </div>
+    </div>
+    <div class="profile-box" onclick="toggleDropdown()">
+      <img src="image.png" alt="Profile Picture">
+      <span>ROUSHAN KUMAR</span>
+      <div class="dropdown" id="profileDropdown">
+        <div class="dropdown-header">
+          <strong>Name : ROUSHAN KUMAR</strong>
+          <div>Scholar No. : 12976</div>
+          <div>Class : B.Tech (Computer Science & Engineering - Data Science) II SEM, A</div>
+        </div>
+        <a href="#">👤 Profile</a>
+        <a href="#">⚙ Change Password</a>
+        <a href="index.html">↩ Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sidebar">
+    <a href="home.html" class="active">Dashboard</a>
+    <a href="#">General Information</a>
+    <a href="#">Academics</a>
+    <div class="logout-button">
+      <a href="index.html">Logout</a>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="cards">
+      <!-- Existing Cards (Fees, General Info, Academics) -->
+      <div class="card">
+        <h2>Fees Information</h2>
+        <ul>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a class="red" href="0record.html">VERIFIED TRANSACTION</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a href="fee.html">PAY FEE ONLINE</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a class="red" href="0record.html">FEE SOP / VIDEO INSTRUCTIONS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a href="0record.html">OTHER FEE PRINT</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a href="0record.html">FEE BANK ACCOUNT TRANSFER</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a href="0record.html">FEES RECEIPTS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a href="0record.html">STUDENT LEDGER</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a href="0record.html">ONLINE FEE TRANSACTION STATUS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a href="0record.html">FEES INSTALLMENT CHART</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"><a href="0record.html">OTHER LEDGER</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>General Information</h2>
+        <ul>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">ACADEMIC CALENDER</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">YOUR PROFILE</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">EXAMINATION PAPER</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">QUESTION PAPER</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">NEWS/NOTICES</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">SYLLABUS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">GRIEVANCE</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">ONLINE FORM APPROVAL STATUS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">STUDENT PROGRESSION INDEX</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">STUDENT PROGRESSION DIARY</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">CONTACT DETAIL</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">OTHER SERVICE REQUEST</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"><a href="0record.html">ABCID VERIFICATION</a></li>
+        </ul>
+      </div>
+
+      <!-- Existing Communication, Academic, Hostel Cards are preserved below -->
+
+      <div class="card">
+        <h2>Communication</h2>
+        <ul>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/149/149852.png"><a href="0record.html">QUERY TO FACULTY</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/149/149852.png"><a href="0record.html">COMMUNICATE</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Academic</h2>
+        <ul>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">ZOOM ONLINE CLASS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">STUDENT PROGRESS ENTRY</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">ONLINE CLASS RECORDING</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">TIME TABLE</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">COURSE OUTLINE</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">ASSESSMENT MARKS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">ONLINE TEST PORTAL</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="result.html">Exam Result</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">CURRENT BACKLOG</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">SUBJECT CHOICE FILLING</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">ASSIGNMENTS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">ASSESSMENT SUBMISSION</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">EVENT/ACTIVITY ATTENDANCE</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">ATTENDANCE STATUS</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">ATTENDANCE SUB/WISE</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"><a href="0record.html">LEAVE APPLICATION</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Hostel</h2>
+        <ul>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/893/893257.png"><a href="0record.html">HOSTEL NOTIFICATION</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/893/893257.png"><a href="0record.html">HOSTEL/BUS SERVICE REQUEST</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/893/893257.png"><a href="0record.html">HOSTEL COMPLAINT / REQUEST</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/893/893257.png"><a href="0record.html">APPLY FOR HOSTEL</a></li>
+          <li><img src="https://cdn-icons-png.flaticon.com/512/893/893257.png"><a href="0record.html">HOSTEL REGISTRATION</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('profileDropdown');
+      dropdown.classList.toggle('active');
+    }
+    window.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('profileDropdown');
+      const profileBox = document.querySelector('.profile-box');
+      if (!profileBox.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

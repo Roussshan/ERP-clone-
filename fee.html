@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccSoft 2.0 : Parent Desk</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f5f9;
+    }
+    header {
+      background: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      position: relative;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo-box img {
+      height: 60px;
+    }
+    .header-info {
+      display: flex;
+      gap: 40px;
+      font-size: 14px;
+      margin-left: 40px;
+      flex: 1;
+      justify-content: center;
+    }
+    
+    .info-block {
+      text-align: left;
+    }
+    .info-block strong {
+      display: block;
+      font-weight: 600;
+    }
+    .profile-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+    .profile-box img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+    .profile-box span {
+      font-weight: 500;
+      color: #666;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      font-size: 14px;
+      z-index: 1000;
+    }
+    .dropdown.active {
+      display: block;
+    }
+    .dropdown-header {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .dropdown-header strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .dropdown-header div {
+      color: #555;
+      margin-top: 2px;
+    }
+    .dropdown a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      border-top: 1px solid #f0f0f0;
+    }
+    .dropdown a:hover {
+      background: #f9f9f9;
+    }
+    .sidebar {
+      width: 220px;
+      background: #0e2a5c;
+      color: #fff;
+      position: fixed;
+      top: 71px;
+      bottom: 0;
+      left: 0;
+      padding-top: 30px;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: 500;
+      border-left: 4px solid transparent;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      background-color: #1e3f73;
+      border-left: 4px solid #ffc107;
+    }
+    .main-content {
+      margin-left: 220px;
+      padding: 30px;
+    }
+    .fee-box {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    .footer {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #fee;
+      border: 1px solid #faa;
+    }
+    .btn {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .btn-exit {
+      background: gray;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-box">
+      <img src="NIU_Logo.png" alt="NIU Logo">
+      <span>Noida International University</span>
+    </div>
+    <div class="header-info">
+      <div class="info-block">
+        <strong>Scholar No.</strong>
+        12976
+      </div>
+      <div class="info-block">
+        <strong>Class</strong>
+        B.Tech (Computer Science & Engineering - Data Science) II SEM , SEC- A
+      </div>
+    </div>
+    <div class="profile-box" onclick="toggleDropdown()">
+      <img src="image.png" alt="Profile Picture">
+      <span>ROUSHAN KUMAR</span>
+      <div class="dropdown" id="profileDropdown">
+        <div class="dropdown-header">
+          <strong>Name : ROUSHAN KUMAR</strong>
+          <div>Scholar No. : 12976</div>
+          <div>Class : B.Tech (Computer Science & Engineering - Data Science) II SEM, A</div>
+        </div>
+        <a href="#">👤 Profile</a>
+        <a href="#">⚙ Change Password</a>
+        <a href="index.html">↩ Logout</a>
+      </div>
+    </div>
+  </header>
+  <nav class="sidebar">
+    <a href="home.html" class="active">Dashboard</a>
+    <a href="#">General Information</a>
+    <a href="#">Academics</a>
+    <div class="logout-button">
+      <a href="index.html">Logout</a>
+    </div>
+  </nav>
+  <main class="main-content">
+    <h2>Online Fees Payment</h2>
+    <div class="fee-box">
+      <p><strong>Date:</strong> 14-Jul-2025 &nbsp;&nbsp; <strong>Rcpt/Chln No.:</strong> 6294 &nbsp;&nbsp; <strong>Due Upto:</strong> 14-Jul-2025</p>
+      <p><strong>Name:</strong> ROUSHAN KUMAR :: <strong>Father's Name:</strong> RANDHIR RANJAN :: <strong>Class:</strong> B.Tech (Computer Science & Engineering - Data Science) II SEM, A :: <strong>Adm. Dt.:</strong> 06-Sep-2024</p>
+      <p><strong>Serial No.:</strong> 12976 <strong>Scholar No.:</strong> NIU-24-15698 <strong>Enrollment No.:</strong> 24044580409</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Sr</th>
+            <th>Head Name</th>
+            <th>Due Amount</th>
+            <th>Rec. Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>EXAM FEES</td><td>12000.00</td><td>12000.00</td></tr>
+          <tr><td>2</td><td>ACTIVITY FEES</td><td>1000.00</td><td>1000.00</td></tr>
+          <tr><td>3</td><td>FOREIGN LANGUAGE FEE</td><td>1000.00</td><td>1000.00</td></tr>
+          <tr><td>4</td><td>TUITION FEES</td><td>66780.00</td><td>66780.00</td></tr>
+        </tbody>
+      </table>
+      <div class="footer">
+        <p><strong>Remarks:</strong> Online Payment &nbsp;&nbsp; <strong>By Bank:</strong> 80780</p>
+        <p style="color: red; font-size: 13px;">
+          1. If you are paying through Debit/Credit Card, the transaction will be reflected in your ERP Login after 1 working day.<br>
+          2. If you are paying through Net Banking, the transaction will be reflected in your ERP Login after 2 working days.
+        </p>
+        <button class="btn">Proceed To Payment</button>
+        <button class="btn btn-exit">Exit</button>
+      </div>
+    </div>
+  </main>
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('profileDropdown');
+      dropdown.classList.toggle('active');
+    }
+    window.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('profileDropdown');
+      const profileBox = document.querySelector('.profile-box');
+      if (!profileBox.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
