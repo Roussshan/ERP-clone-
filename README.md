@@ -23,3 +23,16 @@ This project recreates the look and feel of a typical college ERP portal — the
 - **CSS3** — styling and layout
 - **JavaScript (Vanilla)** — login validation and page interactions
 No backend, database, or build tools are used — this is a static, front-end-only clone.
+
+## 📂 Project Structure
+ 
+```
+ERP-clone-/
+├── index.html      # Login page
+├── home.html        # Dashboard / home page
+├── fee.html          # Fee details page
+├── result.html      # Result page
+├── 0record.html    # Records page
+├── NIU_Logo.png                  # College logo asset
+├── Logo-login-window.png   # Login window logo asset
+└── *.png / *.jpg                    # Other image assets/screenshots
