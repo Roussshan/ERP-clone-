@@ -16,3 +16,10 @@ This project recreates the look and feel of a typical college ERP portal — the
 - 📄 Result page
 - 🗂️ Records page
 - 🎨 Custom styling built with plain CSS (no frameworks)
+
+## 🛠️ Tech Stack
+ 
+- **HTML5** — page structure
+- **CSS3** — styling and layout
+- **JavaScript (Vanilla)** — login validation and page interactions
+No backend, database, or build tools are used — this is a static, front-end-only clone.
