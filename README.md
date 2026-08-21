@@ -25,7 +25,7 @@ This project recreates the look and feel of a typical college ERP portal — the
 No backend, database, or build tools are used — this is a static, front-end-only clone.
 
 ## 📂 Project Structure
- 
+
 ```
 ERP-clone-/
 ├── index.html      # Login page
@@ -36,8 +36,8 @@ ERP-clone-/
 ├── NIU_Logo.png                  # College logo asset
 ├── Logo-login-window.png   # Login window logo asset
 └── *.png / *.jpg                    # Other image assets/screenshots
-
-
+```
+ 
 ## 🚀 Getting Started
  
 Since this is a static site with no dependencies, you can run it locally in seconds.
