@@ -36,3 +36,14 @@ ERP-clone-/
 ├── NIU_Logo.png                  # College logo asset
 ├── Logo-login-window.png   # Login window logo asset
 └── *.png / *.jpg                    # Other image assets/screenshots
+
+
+## 🚀 Getting Started
+ 
+Since this is a static site with no dependencies, you can run it locally in seconds.
+ 
+1. **Clone the repository**
+```bash
+   git clone https://github.com/Roussshan/ERP-clone-.git
+   cd ERP-clone-
+```
