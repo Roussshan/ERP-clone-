@@ -47,3 +47,12 @@ Since this is a static site with no dependencies, you can run it locally in seco
    git clone https://github.com/Roussshan/ERP-clone-.git
    cd ERP-clone-
 ```
+
+2. **Open it in a browser**
+   Simply open `index.html` in your browser, or serve it locally:
+```bash
+   # Using Python
+   python -m http.server 8000
+```
+   Then visit `http://localhost:8000` in your browser.
+ 
