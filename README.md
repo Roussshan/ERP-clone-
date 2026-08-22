@@ -58,3 +58,14 @@ Since this is a static site with no dependencies, you can run it locally in seco
 
  3. **Login**
    Use the credentials configured in `index.html` to log in and navigate through the dashboard, fee, and result pages.
+
+
+## 📸 Screenshots
+ 
+*(Add screenshots of the login page, dashboard, fee page, and result page here to give visitors a preview.)*
+ 
+## ⚠️ Disclaimer
+ 
+- This project was created purely for **learning and portfolio purposes**.
+- Login credentials are currently **hardcoded in the source code** for demo purposes — this is not secure and should never be done in a real/production application. Consider moving credentials out of the codebase (e.g., into environment variables or a backend) before sharing this project publicly.
+- All logos and branding used belong to their respective owners and are included only for visual reference.
