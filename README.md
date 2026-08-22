@@ -80,3 +80,7 @@ Since this is a static site with no dependencies, you can run it locally in seco
  
 **Roussshan**
 GitHub: [@Roussshan](https://github.com/Roussshan)
+
+## 📄 License
+ 
+This project currently has no license specified. Feel free to add one (e.g., MIT) if you'd like others to reuse or contribute to the code.
