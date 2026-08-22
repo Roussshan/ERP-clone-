@@ -55,4 +55,6 @@ Since this is a static site with no dependencies, you can run it locally in seco
    python -m http.server 8000
 ```
    Then visit `http://localhost:8000` in your browser.
- 
+
+ 3. **Login**
+   Use the credentials configured in `index.html` to log in and navigate through the dashboard, fee, and result pages.
