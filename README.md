@@ -69,3 +69,14 @@ Since this is a static site with no dependencies, you can run it locally in seco
 - This project was created purely for **learning and portfolio purposes**.
 - Login credentials are currently **hardcoded in the source code** for demo purposes — this is not secure and should never be done in a real/production application. Consider moving credentials out of the codebase (e.g., into environment variables or a backend) before sharing this project publicly.
 - All logos and branding used belong to their respective owners and are included only for visual reference.
+
+## 🗺️ Roadmap / Ideas for Improvement
+ 
+- [ ] Move login validation to a backend with proper authentication
+- [ ] Add responsive design for mobile devices
+- [ ] Add more ERP modules (attendance, timetable, notices)
+- [ ] Replace hardcoded credentials with a secure auth flow
+## 👤 Author
+ 
+**Roussshan**
+GitHub: [@Roussshan](https://github.com/Roussshan)
